@@ -1,0 +1,14 @@
+wsl --update
+pip install mysql-connector-python
+docker compose up -d
+
+pip install Flask
+
+
+INSERT INTO CLIENTE (Nombre, Apellido1, Apellido2, Telefono, Email)
+VALUES
+    ('MYSQL', 'MYSQL', 'MYSQL', '555-123-4567', 'MYSQL@example.com');
+
+INSERT INTO CLIENTE (Nombre, Apellido1, Apellido2, Telefono, Email)
+VALUES
+    ('MARIADB', 'MARIADB', 'MARIADB', '555-123-4567', 'MARIADB@example.com');

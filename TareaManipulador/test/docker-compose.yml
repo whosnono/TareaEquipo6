@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+      - mariadb
+    networks:
+      - mynetwork
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3307:3306"  # Mapea el puerto 3306 del contenedor al puerto 3307 de la máquina local
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: TallerMecanico
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    networks:
+      - mynetwork
+    command: --bind-address=0.0.0.0  # Permite la conexión desde cualquier dirección IP
+    volumes:
+      - /c/Users/sofip/Downloads/IS1_PROYECTO_V4/test/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  mariadb:
+    image: mariadb:latest
+    ports:
+      - "3308:3306"  # Mapea el puerto 3306 del contenedor al puerto 3308 de la máquina local
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: TallerMecanico
+      MARIADB_USER: user
+      MARIADB_PASSWORD: user
+    networks:
+      - mynetwork
+    command: --bind-address=0.0.0.0  # Permite la conexión desde cualquier dirección IP
+    volumes:
+      - /c/Users/sofip/Downloads/IS1_PROYECTO_V4/test/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  mynetwork:
