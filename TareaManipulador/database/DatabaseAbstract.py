@@ -1,3 +1,10 @@
+# Integrantes:
+# Cardenas Rosas Sofia 
+# Figueroa Hernández Sofia Belem 
+# Lopez Cerecer Angelica Guadalupe
+# Matus Valencia Elda Berenice
+# Vega Lopez Marian Eugenia
+
 from abc import ABC, abstractmethod
 
 # Clase base abstracta para la base de datos
