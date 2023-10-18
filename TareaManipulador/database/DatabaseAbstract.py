@@ -3,7 +3,7 @@
 # Figueroa Hernández Sofia Belem 
 # Lopez Cerecer Angelica Guadalupe
 # Matus Valencia Elda Berenice
-# Vega Lopez Marian Eugenia
+# Vega Gutierrez Marian Eugenia
 
 from abc import ABC, abstractmethod
 
